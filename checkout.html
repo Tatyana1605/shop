@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check-out</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+          <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+          <link rel="stylesheet" href="sass/style.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="top">
+        <!--HEADER-->
+        <header class="header">
+            <div class="container header__flex">
+                <div class="header__left">
+                    <a class="logo" href="index.html"><img src="img/logo.png" alt="logo">
+                        <div class="brand">BRAN<span class="pink weight">D</span></div>
+                    </a>
+                    <form class="header__form" action="#">
+                        <div class="browse"><a href="#" class="brw">Browse<i class="fas fa-caret-down"></i></a>
+                            <div class="drop__browse">
+                                <h3 class="drop__header">Women</h3>
+                                <ul>
+                                    <li><a href="catalog.html" class="drop__link">Dresses</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Tops</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Sweaters/Knits</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Jackets/Coats</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Blazers</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Denim</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Leggings/Pants</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Skirts/Shorts</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Accessories </a></li>
+                                </ul>
+                                <h3 style="margin-top: 22px;" class="drop__header">Men</h3>
+                                <ul>
+                                    <li><a href="catalog.html" class="drop__link">Tees/Tank tops</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Shirts/Polos</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Sweaters</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Sweatshirts/Hoodies</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Blazers</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Jackets/vests</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <search-component @search="onQueryChange"></search-component>
+                         
+                    </form>
+                </div>
+                <div class="header__right">
+                    <div class="sh" @mouseover="toggleBasket" @mouseout="toggleBasket" ><a href="shopping-card.html"><img src="img/Forma_1.svg" alt="basket"
+                                                                     class="shopping-cart"></a>
+                        <div class="sh-count">5</div>
+                        <div v-if="isBasketVisible">
+                        <basket-component :items="basket" @changed="handelBasketChange" @deleted="handelDeletClick"></basket-component>
+                        </div>
+                    </div>
+                    <a class="button" href="#">My&nbsp;Account<i class="fas fa-caret-down"></i></a>
+                </div>
+            </div>
+        </header>
+        <!--HEADER-->
+        <!--MENU-->
+        <menus-component :items="menus"    ></menus-component>
+         
+        <!--MENU-->
+        <!--BREADCRUMBS-->
+        <section class="catalog-header">
+            <div class="container ch-flex">
+                <h1>New Arrivals</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a>&nbsp;/</li>
+                        <li><a href="catalog.html">Men</a>&nbsp;/</li>
+                        <li><a href="#" class="activate">New Arrivals</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <!--BREADCRUMBS-->
+        <!--SHIPPING ADDRESS-->
+        <section class="checkout container">
+            <h2 class="first-shipping">
+                01. Shipping Adress
+            </h2>
+            <div class="first-shipping-div">
+                <!--LEFT-SIDE-->
+                <div class="ch-left-side">
+                    <div class="checkas">Check as&nbsp;a&nbsp;guest or&nbsp;register</div>
+                    <div class="register">Register with&nbsp;us for future convenience</div>
+                    <div class="radio">
+                        <div>
+                            <input type="radio" name="form" id="radio-guest" checked><label for="radio-guest">checkout
+                            as
+                            guest</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="form" id="radio-reg"><label for="radio-reg">register</label>
+                        </div>
+                    </div>
+                    <div class="checkas">register and save time!</div>
+                    <div class="register">Register with&nbsp;us for future convenience</div>
+                    <div class="fast"><a href="#"><i class="fas fa-angle-double-right"></i> Fast and
+                        easy
+                        checkout</a></div>
+                    <div class="fast"><a href="#"><i class="fas fa-angle-double-right"></i> Easy access
+                        to&nbsp;your
+                        order history and status</a></div>
+                    <a href="#">
+                        <div class="button-continue">Continue</div>
+                    </a>
+                </div>
+                <!--LEFT-SIDE-->
+                <!--RIGHT-SIDE-->
+                <div class="ch-right-side">
+                    <div class="checkas">Already registed?</div>
+                    <div class="log">Please log in&nbsp;below</div>
+                    <div class="input-text"><label for="email">EMAIL&nbsp;ADDRESS</label><span class="star">*</span>
+                    </div>
+                    <div>
+                        <input type="email" class="reg-form" id="email">
+                    </div>
+                    <div class="input-text"><label for="password">PASSWORD</label><span class="star">*</span></div>
+                    <div><input type="password" class="reg-form" id="password">
+                    </div>
+                    <div class="required">* Required Fileds</div>
+                    <a href="#">
+                        <div style="float:left;" class="button-continue">Log in</div>
+                    </a>
+                    <div class="forgot"><a href="#" class="forgot-text">Forgot Password ?</a></div>
+                </div>
+            </div>
+            <!--RIGHT-SIDE-->
+            <!--SHIPPING ADDRESS-->
+            <!--ANOTHER SHIPIINGS-->
+            <h2 class="shipping">02. BILLING INFORMATION</h2>
+            <h2 class="shipping">03. SHIPPING INFORMATION</h2>
+            <h2 class="shipping">04. SHIPPING METHOD</h2>
+            <h2 class="shipping">05. PAYMENT METHOD</h2>
+            <h2 class="shipping">06. ORDER REVIEW</h2>
+            <!--ANOTHER SHIPIINGS-->
+        </section>
+
+        <!--SUBSCRIBE PANEL-->
+        <div class="subscribe">
+            <div class="container">
+                <div class="review">
+                    <div class="rev review__rev">
+                        <p class="rev-pers">&laquo;Vestibulum quis porttitor dui! Quisque viverra nunc&nbsp;mi,
+                            a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed pretium&raquo;</p>
+                        <p class="person-name">Bin Burhan</p>
+                        <p class="person-place">Dhaka, Bd</p>
+                        <div class="lines">
+                            <div class="line checked"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <article class="subs">
+                    <h3>Subscribe</h3>
+                    <h4>FOR OUR NEWLETTER AND PROMOTION</h4>
+                    <form action="#" class="fs">
+                        <input type="email" class="form" placeholder="Ener Your Email">
+                        <button class="sub-but">Subscribe</button>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!--SUBSCRIBE PANEL-->
+    <!--FOOTER-->
+    <footer class="container">
+        <div class="info">
+            <a class="logo" href="index.html"><img src="img/logo.png" alt="logo">
+                <div class="brand">BRAN<span class="pink weight">D</span></div>
+            </a>
+            <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate
+                multidisciplinary materials before go&nbsp;forward benefits. Intrinsicly syndicate an&nbsp;expanded
+                array of
+                processes
+                and cross-unit partnerships.</p>
+            <p>Efficiently plagiarize 24/365 action items and focused infomediaries.
+                Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+        </div>
+        <nav>
+            <h4>COMPANY</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">How It&nbsp;Works</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <nav>
+
+            <h4>INFORMATION</h4>
+            <ul>
+                <li><a href="#">Tearms &amp;&nbsp;Condition</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">How to&nbsp;Buy</a></li>
+                <li><a href="#">How to&nbsp;Sell</a></li>
+                <li><a href="#">Promotion</a></li>
+            </ul>
+        </nav>
+        <nav>
+
+            <h4>SHOP CATEGORY</h4>
+            <ul>
+                <li><a href="catalog.html">Men</a></li>
+                <li><a href="catalog.html">Women</a></li>
+                <li><a href="catalog.html">Child</a></li>
+                <li><a href="catalog.html">Apparel</a></li>
+                <li><a href="catalog.html">Brows All</a></li>
+            </ul>
+        </nav>
+        </div>
+
+    </footer>
+
+
+    <div class="social">
+        <div class="container">
+            <div class="rights">&copy;&nbsp;2017 Brand All Rights Reserved.</div>
+            <div class="icons">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-pinterest-square"></i></a>
+                <a href="#"><i class="fab fa-google-plus-square"></i></a>
+            </div>
+        </div>
+    </div>
+    <!--FOOTER-->
+</div>
+<script src="vue.js"></script>
+</body>
+</html>

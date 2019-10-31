@@ -1,0 +1,236 @@
+/*SINGLE PAGE PANEL*/
+.single-page
+  width: 100%
+  border-top: $single-page-border
+  border-bottom: $single-page-border
+  background-color: #f7f7f7
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 777px
+  background-repeat: no-repeat
+  background-position: center center
+  transition: color .3s ease-out
+
+  .angle
+    padding: 20px 20px 20px 12px
+    background-color: #d8d8d8
+
+  .arrow
+    color: $white-color
+    font-size: 24px
+    font-weight: $regular-weight
+
+    &:hover
+      color: $pink-color
+
+/*SINGLE PAGE PANEL*/
+/*SINGLE PAGE DESCRIPTION*/
+
+.product-description
+  outline: $single-page-border
+  background-color: $white-color
+  margin-top: -75px
+  display: flex
+  justify-content: center
+
+.product-desc__wrapper
+  width: 642px
+  display: flex
+  justify-content: center
+  flex-direction: column
+
+  &:hover .product-description-rating
+    visibility: visible
+
+.desc-head
+  color: $pink-color
+  font-size: 14px
+  font-weight: $bold-weight
+  text-transform: uppercase
+  padding-top: 72px
+  border-bottom: $single-page-border
+  width: 148px
+  margin: 0 auto
+
+.border-bottom
+  width: 42px
+  border-bottom: 1px solid $catalog-pink-color
+  height: 14px
+  margin: 0 auto
+
+.product-description-name
+  color: $gray-color
+  font-size: 18px
+  font-weight: $regular-weight
+  text-transform: uppercase
+  padding-top: 17px
+  text-align: center
+
+.product-description-rating
+  color: $rating-stars-color
+  font-size: 19px
+  font-weight: $regular-weight
+  text-transform: uppercase
+  text-align: center
+  padding-top: 24px
+  visibility: hidden
+  opacity: 0.5
+  transition: all .3s ease-out
+  &:hover
+    opacity: 1
+
+.product-description-desc
+  color: #5e5e5e
+  font-size: 14px
+  font-weight: 300
+  padding-top: 24px
+  text-align: center
+
+.product-description-info
+  display: flex
+  justify-content: center
+  padding-top: 28px
+  div
+    padding-right: 22px
+    padding-left: 22px
+    color: #2f2f2f
+    font-size: 14px
+    font-weight: $bold-weight
+    text-transform: uppercase
+
+.desc-info-name
+  color: #b9b9b9
+
+.desc-info-price
+  color: #ef5b70
+  font-size: 24px
+  font-weight: $bold-weight
+  padding-top: 37px
+  border-bottom: $single-page-border
+  text-align: center
+  padding-bottom: 43px
+
+.product-desc-head
+  color: #2f2f2f
+  font-size: 14px
+  font-weight: $bold-weight
+  text-transform: uppercase
+
+.choose-form
+  padding-top: 63px
+  display: flex
+  justify-content: space-between
+
+.form-choose-div
+  width: 155px
+
+.color
+  border: $single-page-border
+  background-color: $white-color
+  padding: 12px
+  color: #bcbcbc
+  font-size: 13px
+  font-weight: $regular-weight
+  width: 130px
+  margin-top: 16px
+
+.number
+  border: $single-page-border
+  background-color: $white-color
+  padding: 12px
+  margin-top: 16px
+  color: #bcbcbc
+  font-size: 13px
+  font-weight: $regular-weight
+  width: 130px
+  &:hover
+    outline: none
+
+.choose-btn-text
+  color: $catalog-pink-color
+  font-size: 16px
+  font-weight: $bold-weight
+  margin-top: 28px
+  margin-bottom: 122px
+  transition: all .3s ease-out
+
+  &:hover
+    color: $white-color
+    background-color: $catalog-pink-color
+
+.choose-btn
+  border: 1px solid $catalog-pink-color
+  padding: 24px
+  text-align: center
+
+.qw
+  padding-right: 15px
+  padding-left: 0
+
+/*SINGLE PAGE DESCRIPTION*/
+/*YOU MAY LIKE ALSO BLOCK*/
+.also-header
+  color: #4d4d4d
+  font-size: 24px
+  font-weight: $regular-weight
+  text-transform: uppercase
+  margin-top: 119px
+  text-align: center
+
+.also-flex
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-top: 72px
+  margin-bottom: 54px
+
+  &-unit:hover .also-flex-rating
+    visibility: visible
+
+.also-flex-img
+  width: 261px
+  height: 280px
+  background-position: top
+  background-size: cover
+
+.also-unit-name
+  color: $catalog-gray-color
+  font-size: 14px
+  font-weight: $regular-weight
+  text-transform: uppercase
+  padding-left: 15px
+  padding-top: 18px
+  width: 246px
+  height: 14px
+  overflow: hidden
+
+.also-flex-price
+  color: $pink-color
+  font-size: 16px
+  font-weight: $bold-weight
+  text-transform: uppercase
+  padding-left: 14px
+  padding-top: 17px
+  width: 136px
+  overflow: hidden
+  float: left
+
+.also-flex-rating
+  color: $rating-stars-color
+  font-size: 15px
+  font-weight: $regular-weight
+  text-transform: uppercase
+  width: 100px
+  float: right
+  padding-top: 15px
+  padding-right: 11px
+  visibility: hidden
+
+.also-flex-unit
+  padding-bottom: 20px
+  transition: all .3s ease-out
+  &:hover
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16)
+    transform: scale(1.05)
+/*YOU MAY LIKE ALSO*/

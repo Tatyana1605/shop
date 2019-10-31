@@ -1,0 +1,116 @@
+{
+  "goods": [
+    {
+      "id": 1,
+      "img": "./img/catalog-img/1.jpg",
+      "title": "Mango People T-shirt",
+      "price": 52,
+      "rating": 1
+    },
+    {
+      "id": 2,
+      "img": "./img/catalog-img/2.jpg",
+      "title": "Mango People T-shirt",
+      "price": 34,
+      "rating": 1
+    },
+    {
+      "id": 3,
+      "img": "img/catalog-img/3.jpg",
+      "title": "Mango People T-shirt",
+      "price": 52,
+      "rating": 1
+    },
+    {
+      "id": 4,
+      "img": "img/catalog-img/4.jpg",
+      "title": "Mango People T-shirt",
+      "price": 52,
+      "rating": 1
+    },
+    {
+      "id": 5,
+      "img": "img/catalog-img/5.jpg",
+      "title": "Mango People T-shirt",
+      "price": 52,
+      "rating": 1
+    },
+    {
+      "id": 6,
+      "img": "img/catalog-img/6.jpg",
+      "title": "Mqngo People T-shirt",
+      "price": 52,
+      "rating": 1
+    },
+    {
+      "id": 7,
+      "img": "img/catalog-img/7.jpg",
+      "title": "Myngo People T-shirt",
+      "price": 52,
+      "rating": 1
+    },
+    {
+      "id": 8,
+      "img": "img/catalog-img/8.jpg",
+      "title": "Mingo People T-shirt",
+      "price": 52,
+      "rating": 1
+    },
+    {
+      "id": 9,
+      "img": "img/catalog-img/9.jpg",
+      "title": "Mengo People T-shirt",
+      "price": 52,
+      "rating": 1
+    }
+  ],
+  "baskets": [
+    {
+      "id": 3,
+      "img": "img/catalog-img/3.jpg",
+      "title": "Mango People T-shirt",
+      "price": 52,
+      "rating": 1,
+      "qty": 1
+    }
+  ],
+  "menus": [
+    {
+      "id": 2,
+      "href": "catalog.html",
+      "grade": "menu-list menu-list-second",
+      "title": "Man"
+    },
+    {
+      "id": 3,
+      "href": "catalog.html",
+      "grade": "menu-list menu-list-third",
+      "title": "Women"
+    },
+    {
+      "id": 4,
+      "href": "catalog.html",
+      "grade": "menu-list menu-list-fourth",
+      "title": "Kids"
+    },
+    {
+      "id": 5,
+      "href": "catalog.html",
+      "grade": "menu-list menu-list-fifth",
+      "title": "Accoseriese"
+    },
+    {
+      "id": 6,
+      "href": "catalog.html",
+      "grade": "menu-list menu-list-pre-last",
+      "title": "Featured"
+    },
+    {
+      "id": 7,
+      "href": "catalog.html",
+      "grade": "menu-list menu-list-last",
+      "title": "Hot Deals"
+    }
+  ]
+  
+}

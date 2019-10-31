@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Single-Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+          <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+          <link rel="stylesheet" href="sass/style.css">
+        
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="top">
+        <!--HEADER-->
+        <header class="header">
+            <div class="container header__flex">
+                <div class="header__left">
+                    <a class="logo" href="index.html"><img src="img/logo.png" alt="logo">
+                        <div class="brand">BRAN<span class="pink weight">D</span></div>
+                    </a>
+                    <form class="header__form" action="#">
+                        <div class="browse"><a href="#" class="brw">Browse<i class="fas fa-caret-down"></i></a>
+                            <div class="drop__browse">
+                                <h3 class="drop__header">Women</h3>
+                                <ul>
+                                    <li><a href="catalog.html" class="drop__link">Dresses</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Tops</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Sweaters/Knits</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Jackets/Coats</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Blazers</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Denim</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Leggings/Pants</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Skirts/Shorts</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Accessories </a></li>
+                                </ul>
+                                <h3 style="margin-top: 22px;" class="drop__header">Men</h3>
+                                <ul>
+                                    <li><a href="catalog.html" class="drop__link">Tees/Tank tops</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Shirts/Polos</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Sweaters</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Sweatshirts/Hoodies</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Blazers</a></li>
+                                    <li><a href="catalog.html" class="drop__link">Jackets/vests</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <search-component @search="onQueryChange"></search-component>
+                         
+                    </form>
+                </div>
+                <div class="header__right">
+                    <div class="sh " @mouseover="toggleBasket" @mouseout="toggleBasket"><a href="shopping-card.html"><img src="img/Forma_1.svg" alt="basket"
+                                                                     class="shopping-cart"></a>
+                        <div class="sh-count">5</div>
+                        <div v-if="isBasketVisible">
+                        <basket-component :items="basket" @changed="handelBasketChange" @deleted="handelDeletClick"></basket-component>
+                        </div>     
+                    </div>
+                    <a class="button" href="#">My&nbsp;Account<i class="fas fa-caret-down"></i></a>
+                </div>
+            </div>
+        </header>
+        <!--HEADER-->
+        <!--MENU-->
+        <menus-component :items="menus"    ></menus-component>
+         
+        <!--MENU-->
+        <!--BREADCRUMBS-->
+        <section class="catalog-header">
+            <div class="container ch-flex">
+                <h1>New Arrivals</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a>&nbsp;/</li>
+                        <li><a href="catalog.html">Men</a>&nbsp;/</li>
+                        <li><a href="#" class="activate">New Arrivals</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <!--BREADCRUMBS-->
+        <!--SINGLE PAGE PANEL-->
+         
+         
+        <div class="single-page" style="background-image: url(img/Layer_42.jpg)">
+            <a href="#" class="arrow">
+                <div class="angle"><i class="fas fa-angle-left"></i></div>
+            </a>
+            <a href="#" class="arrow">
+                <div class="angle"><i class="fas fa-angle-right"></i></div>
+            </a>
+        </div>
+        <!--SINGLE PAGE PANEL-->
+        <!--SINGLE PAGE DESCRIPTION-->
+        <div class="product-description container">
+            <div class="product-desc__wrapper">
+                <div class="desc-head">WOMEN COLLECTION
+                    <div class="border-bottom"></div>
+                </div>
+                <div class="product-description-name">Moschino Cheap And Chic</div>
+                <div class="product-description-rating">
+                    <i class="fas fa-star rat"></i>
+                    <i class="fas fa-star rat"></i>
+                    <i class="fas fa-star rat"></i>
+                    <i class="fas fa-star rat"></i>
+                    <i class="fas fa-star rat"></i>
+                </div>
+                <div class="product-description-desc">Compellingly actualize fully researched processes before proactive
+                    outsourcing. Progressively syndicate collaborative architectures before cutting-edge services.
+                    Completely
+                    visualize parallel core competencies rather than exceptional portals.
+                </div>
+                <div class="product-description-info">
+                    <div><span class="desc-info-name">MATERIAL:</span> COTTON</div>
+                    <div><span class="desc-info-name">DESIGNER:</span> BINBURHAN</div>
+                </div>
+                <div class="desc-info-price">$561</div>
+                <div class="choose-form">
+                    <div class="form-choose-div"><span class="product-desc-head">CHOOSE COLOR</span><input id="color"
+                                                                                                           list="dl_color"
+                                                                                                           class="color"
+                                                                                                           title="color">
+                        <datalist id="dl_color">
+                            <option label="Red" value="Red"></option>
+                            <option label="Blue" value="Blue"></option>
+                            <option label="Green" value="Green"></option>
+                        </datalist>
+                    </div>
+                    <div class="form-choose-div"><span class="product-desc-head">CHOOSE SIZE</span><input id="size"
+                                                                                                          list="dl_size"
+                                                                                                          class="color"
+                                                                                                          title="size">
+                        <datalist id="dl_size">
+                            <option label="S" value="S"></option>
+                            <option label="M" value="M"></option>
+                            <option label="L" value="L"></option>
+                        </datalist>
+                    </div>
+                    <div class="form-choose-div"><span class="product-desc-head">QUANTITY</span><input type="number"
+                                                                                                       class="number"
+                                                                                                       title="number">
+                    </div>
+                </div>
+                <a href="shopping-card.html"
+                   class="choose-btn-text">
+                    <div class="choose-btn"><i class="fas fa-shopping-cart qw"></i>Add to&nbsp;Cart</div>
+                </a>
+            </div>
+        </div>
+        <!--SINGLE PAGE DESCRIPTION-->
+        <!--YOU MAY LIKE ALSO BLOCK-->
+        <div class="container">
+            <div class="also-header">you may like also</div>
+            <div class="also-flex">
+                <a href="#" class="also-flex-unit">
+                    <div>
+                        <div style="background-image: url(img/single-page/1.jpg);" class="also-flex-img"></div>
+                        <div class="also-unit-name">BLAZE LEGGINGS</div>
+                        <div class="also-flex-price">$52.00</div>
+                        <div class="also-flex-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="also-flex-unit">
+                    <div>
+                        <div style="background-image: url(img/single-page/2.jpg);" class="also-flex-img"></div>
+                        <div class="also-unit-name">BLAZE LEGGINGS</div>
+                        <div class="also-flex-price">$52.00</div>
+                        <div class="also-flex-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="also-flex-unit">
+                    <div>
+                        <div style="background-image: url(img/single-page/3.jpg);" class="also-flex-img"></div>
+                        <div class="also-unit-name">BLAZE LEGGINGS</div>
+                        <div class="also-flex-price">$52.00</div>
+                        <div class="also-flex-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="also-flex-unit">
+                    <div>
+                        <div style="background-image: url(img/single-page/4.jpg);" class="also-flex-img"></div>
+                        <div class="also-unit-name">BLAZE LEGGINGS</div>
+                        <div class="also-flex-price">$52.00</div>
+                        <div class="also-flex-rating">
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                            <i class="fas fa-star rat"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <!--YOU MAY LIKE ALSO BLOCK-->
+        <!--SUBSCRIBE PANEL-->
+        <div class="subscribe">
+            <div class="container">
+                <div class="review">
+                    <div class="rev review__rev">
+                        <p class="rev-pers">&laquo;Vestibulum quis porttitor dui! Quisque viverra nunc&nbsp;mi,
+                            a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed pretium&raquo;</p>
+                        <p class="person-name">Bin Burhan</p>
+                        <p class="person-place">Dhaka, Bd</p>
+                        <div class="lines">
+                            <div class="line checked"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <article class="subs">
+                    <h3>Subscribe</h3>
+                    <h4>FOR OUR NEWLETTER AND PROMOTION</h4>
+                    <form action="#" class="fs">
+                        <input type="email" class="form" placeholder="Ener Your Email">
+                        <button class="sub-but">Subscribe</button>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!--SUBSCRIBE PANEL-->
+    <!--FOOTER-->
+    <footer class="container">
+        <div class="info">
+            <a class="logo" href="index.html"><img src="img/logo.png" alt="logo">
+                <div class="brand">BRAN<span class="pink weight">D</span></div>
+            </a>
+            <p>Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate
+                multidisciplinary materials before go&nbsp;forward benefits. Intrinsicly syndicate an&nbsp;expanded
+                array of&nbsp;processes
+                and cross-unit partnerships.</p>
+            <p>Efficiently plagiarize 24/365 action items and focused infomediaries.
+                Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+        </div>
+        <nav>
+            <h4>COMPANY</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">How It&nbsp;Works</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <nav>
+
+            <h4>INFORMATION</h4>
+            <ul>
+                <li><a href="#">Tearms &amp;&nbsp;Condition</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">How to&nbsp;Buy</a></li>
+                <li><a href="#">How to&nbsp;Sell</a></li>
+                <li><a href="#">Promotion</a></li>
+            </ul>
+        </nav>
+        <nav>
+
+            <h4>SHOP CATEGORY</h4>
+            <ul>
+                <li><a href="catalog.html">Men</a></li>
+                <li><a href="catalog.html">Women</a></li>
+                <li><a href="catalog.html">Child</a></li>
+                <li><a href="catalog.html">Apparel</a></li>
+                <li><a href="catalog.html">Brows All</a></li>
+            </ul>
+        </nav>
+
+    </footer>
+
+
+    <div class="social">
+        <div class="container">
+            <div class="rights">&copy;&nbsp;2017 Brand All Rights Reserved.</div>
+            <div class="icons">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-pinterest-square"></i></a>
+                <a href="#"><i class="fab fa-google-plus-square"></i></a>
+            </div>
+        </div>
+    </div>
+    <!--FOOTER-->
+</div>
+
+<script src="vue.js"></script>
+ 
+
+</body>
+
+</html>
